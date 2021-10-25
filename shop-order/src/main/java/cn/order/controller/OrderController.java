@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @Slf4j
-@Api(value = "/order", tags = "订单服务")
+//@Api(value = "/order", tags = "订单服务")
 @RequestMapping("/order")
 public class OrderController {
 
@@ -36,7 +36,7 @@ public class OrderController {
 
     //准备买1件商品
     @GetMapping("/prod/{pid}")
-    @ApiOperation(value = "订单查询", notes = "订单查询")
+//    @ApiOperation(value = "订单查询", notes = "订单查询")
     public Order order(@PathVariable("pid") Integer pid) {
         log.info("接收到{}号商品的下单请求,接下来调用商品微服务查询此商品信息", pid);
         //调用商品微服务,查询商品信息

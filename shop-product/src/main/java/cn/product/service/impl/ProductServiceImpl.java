@@ -16,4 +16,15 @@ public class ProductServiceImpl implements ProductService {
     public Product findByPid(Integer pid) {
         return productDao.findById(pid).get();
     }
+
+    @Override
+    public void reduceInventory(Integer pid, int num) {
+        Product product = productDao.findById(pid).get();
+        if (product.getStock() < num) {
+            throw new RuntimeException("库存不足");
+        }
+        int i = 1 / 0;
+        product.setStock(product.getStock() - num);
+        productDao.save(product);
+    }
 }

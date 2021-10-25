@@ -9,4 +9,6 @@ public interface OrderService {
     void message();
 
     void createOrder(Order order);
+
+    Order createOrder2(Integer pid);
 }
